@@ -16,6 +16,7 @@ have_library('objc') if RUBY_PLATFORM =~ /darwin/
 $CPPFLAGS += " -Wall" unless $CPPFLAGS.split.include? "-Wall"
 $CPPFLAGS += " -g" unless $CPPFLAGS.split.include? "-g"
 $CPPFLAGS += " -rdynamic" unless $CPPFLAGS.split.include? "-rdynamic"
+$CPPFLAGS += " -fno-strict-aliasing" unless $CPPFLAGS.split.include? "-fno-strict-aliasing"
 
 $DEFLIBPATH.unshift(Libv8.library_path)
 $LIBS << ' -lv8'
